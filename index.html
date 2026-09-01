@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>浏览器朗读工具 · Text to Speech</title>
+<meta name="description" content="免费开源、纯浏览器运行的文字朗读工具，基于浏览器自带 Web Speech API，选系统语音、调语速语调，直接朗读文本。不联网、不上传、不需要接口Key。">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <h1>浏览器<span class="accent">朗读</span>工具</h1>
+    <p class="tagline">用浏览器自带的语音合成能力朗读文字——选系统语音、调语速和语调，不需要接任何 API Key，不联网。</p>
+  </header>
+
+  <main class="layout">
+    <section class="panel">
+      <textarea id="textInput" spellcheck="false" placeholder="把要朗读的文字粘贴到这里……">欢迎使用浏览器朗读工具。这段文字会用你系统自带的语音引擎读出来，完全在本地完成，不需要联网，也不需要任何 AI 接口。</textarea>
+    </section>
+
+    <section class="controls">
+      <div class="field">
+        <label>语音</label>
+        <select id="voiceSelect"></select>
+      </div>
+      <div class="field">
+        <label>语速：<span id="rateVal">1.0</span></label>
+        <input id="rateInput" type="range" min="0.5" max="2" step="0.1" value="1">
+      </div>
+      <div class="field">
+        <label>语调：<span id="pitchVal">1.0</span></label>
+        <input id="pitchInput" type="range" min="0" max="2" step="0.1" value="1">
+      </div>
+      <div class="btns">
+        <button id="btnPlay" class="btn btn-primary">▶ 朗读</button>
+        <button id="btnStop" class="btn btn-ghost">■ 停止</button>
+      </div>
+      <p id="statusHint" class="hint"></p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>MIT 协议开源，用的是浏览器内置 Web Speech API，不联网、不上传文字内容。可用语音取决于你的浏览器和操作系统。</p>
+    <p>想要 300+ 真人音色、多语言合成、情感语调调节，能导出音频文件？<a href="https://inzyxuashop.com/aipeiyin-yuanma.html" target="_blank" rel="noopener">看看完整版 AI 配音源码 →</a></p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
